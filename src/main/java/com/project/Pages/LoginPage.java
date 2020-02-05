@@ -20,7 +20,7 @@ public class LoginPage extends BasePage {
 		PageFactory.initElements(driver, this);
 		seleniumUtils = new SeleniumUtils();
 	}
-	
+// finding elements	
 	@FindBy(id="emailId")
 	@CacheLookup
 	WebElement emailId;

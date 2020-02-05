@@ -11,7 +11,7 @@ import com.project.Pages.SupportPage;
 
 public class GeneralActions {
 
-	public static void Login(WebDriver driver, String userName, String pswd) {
+	public void Login(WebDriver driver, String userName, String pswd) {
 		LandingPage lp = new LandingPage(driver);
 		lp.clickLogin();
 		LoginPage loginPage = new LoginPage(driver);
@@ -22,7 +22,7 @@ public class GeneralActions {
 		
 	}
 	
-	public static void GenerateSupportTicket( WebDriver driver, String fullName, String emailId, String probType, String msg) {
+	public void GenerateSupportTicket( WebDriver driver, String fullName, String emailId, String probType, String msg) {
 
 		HomePage hp = new HomePage(driver);
 		hp.clicksupport();

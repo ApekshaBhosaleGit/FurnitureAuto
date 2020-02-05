@@ -30,7 +30,7 @@ public class DBUtils {
 	}
 
 	public Map<String, String> getSupportDetails() {
-		String query = "select * from <table_name> where cond1=value1";
+		String query = "select * from support where referent_number=referenceNumber";
 		try {
 			Map<String, String> supportDetails = new HashMap<>();
 			Statement stmt = connection.createStatement();
