@@ -13,7 +13,7 @@ public class CommonDriver {
 		switch (browserName) {
 		case "chrome":
 //			String a = System.getProperty("user.dir") + "\\src\\test\\resources\\Drivers\\chromedriver.exe";
-//			System.out.println(a);
+//			System.out.println(aaa);
 			System.setProperty("webdriver.chrome.driver",
 					System.getProperty("user.dir") + "\\src\\test\\resources\\Drivers\\chromedriver.exe");
 		
