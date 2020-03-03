@@ -3,14 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.project.testCases.TC_GenerateSupportTicket_001">
+      <class name="com.project.testCases.TC_UserDetailsAPI_002_2">
         <methods>
-          <include name="logOut"/>
-          <include name="teardown"/>
-          <include name="setup"/>
-          <include name="generateSupportTicketTest" invocation-numbers="0"/>
+          <include name="tc_UserDetailsAPI_002_2"/>
         </methods>
-      </class> <!-- com.project.testCases.TC_GenerateSupportTicket_001 -->
+      </class> <!-- com.project.testCases.TC_UserDetailsAPI_002_2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

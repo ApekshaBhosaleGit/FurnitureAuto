@@ -40,6 +40,11 @@ public class SupportPage extends BasePage {
 	@FindBy(xpath = "//button[@class='btn btn-success']")
 	@CacheLookup
 	WebElement buttonSend;
+	
+	@FindBy(xpath = "//h3[@class='customer-header']")
+	@CacheLookup
+	WebElement pageHeader;
+	
 
 	public void enterName(String name) {
 		seleniumUtils.sendKeys(fullName, name);
@@ -61,5 +66,9 @@ public class SupportPage extends BasePage {
 	public void clicksend() {
 		seleniumUtils.clickElement(buttonSend);
 		;
+	}
+	
+	public void explicitWait() {
+		seleniumUtils.explicitWait(driver, pageHeader);
 	}
 }

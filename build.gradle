@@ -37,7 +37,11 @@ dependencies {
 	compile group: 'commons-io', name: 'commons-io', version: '2.4'
 	compile group: 'com.paulhammant', name: 'ngwebdriver', version: '1.0'
 	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.18'
-	
+	//compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.13.0'
+ 	//compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.0'
+ 	testCompile group: 'io.rest-assured', name: 'rest-assured', version: '3.0.0'
+ 	compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
+ 	compile group: 'log4j', name: 'log4j', version: '1.2.17'
 	
 }
 
