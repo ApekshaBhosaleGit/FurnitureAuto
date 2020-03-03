@@ -1,13 +1,18 @@
 package com.project.base;
 
-import java.util.concurrent.TimeUnit;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
 import com.project.utils.CommonDriver;
+import com.project.utils.TakeScreenShot;
 
 public class BaseClass {
 	public String baseurl = "http://okmry52647dns.eastus.cloudapp.azure.com:9090/";
@@ -29,16 +34,32 @@ public class BaseClass {
 		// driver = new ChromeDriver();
 		commonDriver = new CommonDriver();
 		driver = commonDriver.launchBrowser("chrome");
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.manage().timeouts().pageLoadTimeout(45, TimeUnit.SECONDS);
+		
 	}
 
 	@AfterClass
 	public void teardown() {
 		commonDriver.closeBrowser(driver);
 
+	}
+	
+	public TakeScreenShot ts = new TakeScreenShot();
+	public ExtentTest extentTest; 
+	
+	public void report(WebDriver driver, String status, String message) {
+		final Map<Integer, ExtentTest> extentTestMap = new HashMap<Integer, ExtentTest>();
+		
+		extentTest = (ExtentTest) extentTestMap.get((int) (long) (Thread.currentThread().getId()));
+		try {
+		if(status.equalsIgnoreCase("info")) {
+				String screenshotPath = ts.takeScreenShot(driver);
+				extentTest.log(Status.INFO, message,MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+			}
+		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@AfterTest

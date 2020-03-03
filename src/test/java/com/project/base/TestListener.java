@@ -5,6 +5,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.aventstack.extentreports.Status;
+import com.project.utils.TakeScreenShot;
 
 public class TestListener implements ITestListener {
 
@@ -27,12 +28,12 @@ public class TestListener implements ITestListener {
 	public void onTestSuccess(ITestResult result) {
 		System.out.println("*** Executed " + result.getMethod().getMethodName() + " test successfully...");
 		ExtentTestManager.getTest().log(Status.PASS, "Test passed");
+		
 	}
 
 	public void onTestFailure(ITestResult result) {
 		System.out.println("*** Test execution " + result.getMethod().getMethodName() + " failed...");
 		ExtentTestManager.getTest().log(Status.FAIL, "Test Failed");
-//		takeScreenshot();
 	}
 
 	public void onTestSkipped(ITestResult result) {

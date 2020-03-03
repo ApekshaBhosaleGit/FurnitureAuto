@@ -3,6 +3,7 @@ package com.project.utils;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,8 +29,20 @@ public class DBUtils {
 
 		return null;
 	}
+	
+	public void closeConnection() {
+		if (connection != null)
+		{
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
 
-	public Map<String, String> getSupportDetails() {
+	public Map<String, String> getSupportDetails(String referenceNumber) {
 		String query = "select * from support where referent_number=referenceNumber";
 		try {
 			Map<String, String> supportDetails = new HashMap<>();

@@ -8,7 +8,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 public class TakeScreenShot {
-	public void takeScreenShot(WebDriver webdriver,String fileWithPath) throws Exception{
+	public String takeScreenShot(WebDriver webdriver) throws Exception{
 
         //Convert web driver object to TakeScreenshot
 
@@ -17,15 +17,18 @@ public class TakeScreenShot {
         //Call getScreenshotAs method to create image file
 
                 File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+                String path = System.getProperty("user.dir")+"/Screenshot/"+System.currentTimeMillis()+".png";
+                
 
             //Move image file to new destination
 
-                File DestFile=new File(fileWithPath);
+                File DestFile=new File(path);
 
                 //Copy file at destination
 
                 FileUtils.copyFile(SrcFile, DestFile);
-
+                
+                return path;
     }
 
 }
