@@ -48,7 +48,6 @@ public class LoginPage extends BasePage {
 		seleniumUtils.clickElement(signIn);
 		seleniumUtils.moveByOffset(driver,80,90);
 	}
-	
-	
+
 	
 }

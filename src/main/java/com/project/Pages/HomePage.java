@@ -23,9 +23,16 @@ public class HomePage extends BasePage {
 	@CacheLookup
 	WebElement buttonSupport;
 	
+	@FindBy(xpath="//div[@id='toast-container']") 
+	@CacheLookup
+	WebElement flyOut;
+	
 	public void clicksupport()
 	{	
 		seleniumUtils.clickElement(buttonSupport);;
 	}
-
+	public void clickflyout()
+	{	
+		seleniumUtils.clickElement(flyOut);
+	}
 }

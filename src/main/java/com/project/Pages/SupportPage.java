@@ -65,7 +65,6 @@ public class SupportPage extends BasePage {
 
 	public void clicksend() {
 		seleniumUtils.clickElement(buttonSend);
-		;
 	}
 	
 	public void explicitWait() {

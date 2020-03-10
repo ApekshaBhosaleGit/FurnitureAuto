@@ -18,7 +18,7 @@ public class DBUtils {
 
 	public Connection getDBConnection() {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 			String URL = "jdbc:mysql://okmry52647dns.eastus.cloudapp.azure.com:3306/mysql?serverTimezone=UTC";
 			String USER = "sdetuser1";
 			String PASS = "Welcome123$";
@@ -43,7 +43,7 @@ public class DBUtils {
 	}
 
 	public Map<String, String> getSupportDetails(String referenceNumber) {
-		String query = "select * from support where referent_number=referenceNumber";
+		String query = "select * from support where referent_number = 'referenceNumber'";
 		try {
 			Map<String, String> supportDetails = new HashMap<>();
 			Statement stmt = connection.createStatement();

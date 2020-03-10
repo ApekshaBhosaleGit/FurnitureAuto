@@ -16,24 +16,23 @@ public class GeneralActions {
 	BaseClass baseClass = new BaseClass();
 	BasePage basePage = new BasePage();
 	
-	public void Login(WebDriver driver, String userName, String pswd) {
+	public void Login(WebDriver driver, String userName, String pswd) throws InterruptedException {
 		LandingPage lp = new LandingPage(driver);
 		lp.clickLogin();
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.setusername(userName);
 		loginPage.setpassword(pswd);
-		basePage.report(driver,"INFO", "Login successful");
-		loginPage.clicksignin();
-		
-		
+		//basePage.report(driver,"INFO", "Login successful");
+		loginPage.clicksignin();	
 	}
 	
 	public void GenerateSupportTicket( WebDriver driver, String fullName, String emailId, String probType, String msg) {
 
 		HomePage hp = new HomePage(driver);
+		hp.clickflyout();
 		hp.clicksupport();
 		SupportPage sp = new SupportPage(driver);
-		sp.explicitWait();
+	/*	sp.explicitWait();*/
 		sp.enterName(fullName);
 		sp.enterEmail(emailId);
 		sp.selectTypeOfProb(probType);
