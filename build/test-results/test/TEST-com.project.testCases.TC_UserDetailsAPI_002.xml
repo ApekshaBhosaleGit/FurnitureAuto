@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.project.testCases.TC_UserDetailsAPI_002" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-10T02:57:16" hostname="SY4-8D9KXT2" time="2.432">
+  <properties/>
+  <testcase name="tc_UserDetailsAPI" classname="com.project.testCases.TC_UserDetailsAPI_002" time="2.432"/>
+  <system-out><![CDATA[*** Running test method tc_UserDetailsAPI...
+*** Executed tc_UserDetailsAPI test successfully...
+]]></system-out>
+  <system-err><![CDATA[log4j:WARN No appenders could be found for logger (org.apache.http.impl.conn.BasicClientConnectionManager).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+]]></system-err>
+</testsuite>

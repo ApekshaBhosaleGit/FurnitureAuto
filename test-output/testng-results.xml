@@ -1,17 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" ignored="0" total="3" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3449" started-at="2020-03-01T17:05:27 CST" finished-at="2020-03-01T17:05:30 CST">
+  <suite name="Default suite" duration-ms="79245" started-at="2020-03-10T00:08:35 CDT" finished-at="2020-03-10T00:09:54 CDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3449" started-at="2020-03-01T17:05:27 CST" finished-at="2020-03-01T17:05:30 CST">
-      <class name="com.project.testCases.TC_UserDetailsAPI_002">
-        <test-method status="PASS" signature="tc_UserDetailsAPI()[pri:0, instance:com.project.testCases.TC_UserDetailsAPI_002@76707e36]" name="tc_UserDetailsAPI" duration-ms="3390" started-at="2020-03-01T17:05:27 CST" finished-at="2020-03-01T17:05:30 CST">
+    <test name="Default test" duration-ms="79245" started-at="2020-03-10T00:08:35 CDT" finished-at="2020-03-10T00:09:54 CDT">
+      <class name="com.project.testCases.TC_GenerateSupportTicket_001">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.project.testCases.TC_GenerateSupportTicket_001@327514f]" name="setup" is-config="true" duration-ms="2567" started-at="2020-03-10T00:08:35 CDT" finished-at="2020-03-10T00:08:37 CDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc_UserDetailsAPI -->
-      </class> <!-- com.project.testCases.TC_UserDetailsAPI_002 -->
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="generateSupportTicketWeb(java.util.Map)[pri:1, instance:com.project.testCases.TC_GenerateSupportTicket_001@327514f]" name="generateSupportTicketWeb" duration-ms="14398" started-at="2020-03-10T00:08:38 CDT" data-provider="testData" finished-at="2020-03-10T00:08:52 CDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{User_Name=test123@gmail.com, Description=Login with test user and create support ticket, Support_ProbType=shopping, TestCase_ID=1.0, Password=Test@123}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateSupportTicketWeb -->
+        <test-method status="PASS" signature="successValidation(java.util.Map)[pri:2, instance:com.project.testCases.TC_GenerateSupportTicket_001@327514f]" name="successValidation" duration-ms="1113" started-at="2020-03-10T00:08:53 CDT" data-provider="testData" finished-at="2020-03-10T00:08:54 CDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{User_Name=test123@gmail.com, Description=Login with test user and create support ticket, Support_ProbType=shopping, TestCase_ID=1.0, Password=Test@123}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- successValidation -->
+        <test-method status="FAIL" signature="ReferenceNumValidation(java.util.Map)[pri:3, instance:com.project.testCases.TC_GenerateSupportTicket_001@327514f]" name="ReferenceNumValidation" duration-ms="27545" started-at="2020-03-10T00:08:54 CDT" data-provider="testData" finished-at="2020-03-10T00:09:21 CDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{User_Name=test123@gmail.com, Description=Login with test user and create support ticket, Support_ProbType=shopping, TestCase_ID=1.0, Password=Test@123}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.sql.SQLSyntaxErrorException">
+            <message>
+              <![CDATA[Access denied for user 'sdetuser1'@'%' to database 'mysql']]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.sql.SQLSyntaxErrorException: Access denied for user 'sdetuser1'@'%' to database 'mysql'
+at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+at java.sql.DriverManager.getConnection(Unknown Source)
+at java.sql.DriverManager.getConnection(Unknown Source)
+at com.project.utils.DBUtils.getDBConnection(DBUtils.java:25)
+at com.project.utils.DBUtils.<init>(DBUtils.java:16)
+at com.project.testCases.TC_GenerateSupportTicket_001.ReferenceNumValidation(TC_GenerateSupportTicket_001.java:58)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.sql.SQLSyntaxErrorException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReferenceNumValidation -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.project.testCases.TC_GenerateSupportTicket_001@327514f]" name="teardown" is-config="true" duration-ms="926" started-at="2020-03-10T00:09:47 CDT" finished-at="2020-03-10T00:09:48 CDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="logOut()[pri:0, instance:com.project.testCases.TC_GenerateSupportTicket_001@327514f]" name="logOut" is-config="true" duration-ms="2" started-at="2020-03-10T00:09:54 CDT" finished-at="2020-03-10T00:09:54 CDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logOut -->
+      </class> <!-- com.project.testCases.TC_GenerateSupportTicket_001 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

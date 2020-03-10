@@ -29,7 +29,7 @@ public class TC_GenerateSupportTicket_001 extends BaseClass {
 		driver.getCurrentUrl();
 		ga.GenerateSupportTicket(driver, name, testDataMap.get("User_Name"),
 				testDataMap.get("Support_ProbType"), msg);
-		WebDriverWait wait = new WebDriverWait(driver, 25);
+	/*	WebDriverWait wait = new WebDriverWait(driver, 25);*/
 }
 
 	@Test(priority = 2, dataProvider = "testData")
@@ -40,6 +40,13 @@ public class TC_GenerateSupportTicket_001 extends BaseClass {
 		Assert.assertTrue(true == true);
 		Assert.assertEquals(actual, "Thank you-"+name+"!");
 		report(driver,"INFO", "Ticket Created");
+		TakeScreenShot tss = new TakeScreenShot();
+		try {
+			tss.takeScreenShot(driver);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 	@Test(priority = 3, dataProvider = "testData")
@@ -60,8 +67,7 @@ public class TC_GenerateSupportTicket_001 extends BaseClass {
 		}
 	}
 
-		
-		
+			
 
 
 	@DataProvider
